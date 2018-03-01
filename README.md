@@ -6,23 +6,24 @@ So how does it work?
 
 At the base of any random number generator is a hash function. Here is an interactive implementation of a simple alias-based hash function in desmos. This demo also shows how the hash function can be used to create "fractal noise"
 
-Desmos
+[Desmos](https://www.desmos.com/calculator/dj2j2slyhl)
 
 Below is an example of a 2D random number generator implemented for the GPU with a shader. This is very efficient and is an essential building block of many effects. This also can be replaced with a pre-generated random texture, which can be used in the exact same way with perhaps less computational cost.
 
-Shadertoy hash
+[Shadertoy Random Values](https://www.shadertoy.com/view/4ssXRX)
 
 Here is 3D noise, smoothed and layered at multiple frequencies (as in the desmos example) to synthesize interesting textures on the fly.
 
-Shadertoy fractal noise
+[Shadertoy fractal noise](https://www.shadertoy.com/view/4sc3z2)
 
 This music visualizer demonstrates a more indirect use of 3D fractal noise. Rather than simply dumping the values onto the screen, the noise is used to displace the geometry of a mesh. By mapping the amplitudes of frequencies extracted from the music onto the amplitude of each noise frequency, the geometry becomes responsive to the music in a unique way.
 
-Music Visualizer
+[Music Visualizer](http://uwc.graphics/FBM-Triangle-Shredder3.html)
 
-The Index.html file in this repository demonstrates the application of noise onto the height displacement of a plane. With just a few iterations a procedural terrain effect is possible.
+The index.html file in this repository demonstrates the application of noise onto the height displacement of a plane. With just a few iterations a procedural terrain effect is possible.
 
 Demo Terrain
+
 
 Inigo Quilez's famous "elevated" terrain
 
