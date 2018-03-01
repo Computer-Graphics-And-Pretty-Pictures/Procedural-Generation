@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Lighting</title>
+		<title>Procedural Surface</title>
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
@@ -15,15 +15,8 @@
 
 			// @author PWhiddy
 
-			// A container to place our objects into
 			var scene = new THREE.Scene();
-			/*
-			* PerspectiveCamera( fov, aspect, near, far )
-			* fov — Camera  vertical field of view.
-			* aspect — Camera  aspect ratio.
-			* near — Camera near plane. (Objects outside the near and far plane won't be rendered)
-			* far — Camera far plane.
-			*/
+
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
 
 			// Move camera back so we are looking at the origin
@@ -45,17 +38,15 @@
 			// adding orbit controls to allow camera movement
 			var controls = new THREE.OrbitControls( camera, renderer.domElement );
 
-			
 			// Create starting plane geometry with 
-			// 120 width and heigh segments
+			// 100 width and height segments
 			geometry = new THREE.PlaneGeometry(20,20,100,100);
 			
 			console.log(geometry);
 			// The material properties of our object
 			var material = new THREE.MeshStandardMaterial( { color: 0x77aa33, shading: THREE.SmoothShading, side: 
-				THREE.DoubleSide, wireframe: false } ); // color is in hexidecimal
+				THREE.DoubleSide, wireframe: false } );
 			// Use our geometry and material to create a mesh 
-			// (What's a mesh? https://en.wikipedia.org/wiki/Polygon_mesh)
 			var mesh = new THREE.Mesh( geometry, material );
 			mesh.rotation.x += Math.PI/2;
 			// Add mesh to the scene
@@ -73,8 +64,13 @@
 			scene.add(hemisphereLight);
 			//*/
 
+			// Use this function to distort the plane
 			function graphZ(v,t) {
-				return 5*Math.sin(v.x*0.3);
+				let result = 0;
+				// result = 5*Math.sin(v.x*0.3);
+				// result = noise.noise3D( 0.1*v.x+1, 0.1*v.y-1, 0 );
+				 result = terrain(v);
+				return result;
 			}
 
 			function terrain(v) {
@@ -100,21 +96,18 @@
 				controls.update();
 				time += 0.0005;
 
-			// Update vertices z coordinate
-			for (var i = 0; i < geometry.vertices.length; i++ ) {
+				// Update vertices z coordinate
+				for (var i = 0; i < geometry.vertices.length; i++ ) {
+					var v = geometry.vertices[i];
+					geometry.vertices[i].z = graphZ(v);
 
-				var v = geometry.vertices[i];
+				}
 
-				geometry.vertices[i].z = graphZ(v);
-				//noise.noise3D( 0.1*v.x+1, 0.1*v.y-1, 0 );//terrain(v);
-				
-			}
+				geometry.verticesNeedUpdate = true;
+				geometry.computeVertexNormals();
 
-			geometry.verticesNeedUpdate = true;
-			geometry.computeVertexNormals();
-
-				// Render our scene
-				renderer.render(scene, camera);
+					// Render our scene
+					renderer.render(scene, camera);
 			};
 
 			render();
