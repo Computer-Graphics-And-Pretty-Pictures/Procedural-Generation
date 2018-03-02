@@ -38,6 +38,9 @@ It turns out lots of beautiful things in nature can be recreated just as wrapper
 
 [<img src="https://i.imgur.com/KPtdqhl.png">](https://www.shadertoy.com/view/MsVXWW)
 
-Procedural generation can be used for a lot more than just visual effects. Here is an example of randomly generated music, using some of the same principals.
+Procedural generation can be used for a lot more than just visual effects. Here is an example of randomly generated music, using some of the same principals. Every measure, a random root note from a scale is selected, and then a chord configuration is created based on that root. A melody is created at every eight note by randomly selecting from one of the following: A: random note on the scale, B: ascending scale, C: descending scale, D: the root, E: a note from the chord other than the root. The result is a surprisingly natural sounding song.
 
 [<img src="https://i.imgur.com/dE6FAjs.png">](https://www.shadertoy.com/view/ldXBzH)
+
+This is only scratching the surface! 
+Writing generative programs is like meta-creativity- telling the machine which parameters can vary and in what ways allows it to generate unlimited "original" content. It's definitely worth the careful tuning it can require!
