@@ -6,7 +6,7 @@ So how does it work?
 
 At the base of any random number generator is a hash function. Here is an interactive implementation of a simple alias-based hash function in desmos. Note that this is a different design than hashes used in cryptography, but serves the same purpose of scrambling input into an seemingly random output. The demo then goes on to show how the hash function can be used to create "fractal noise"
 
-[Desmos](https://www.desmos.com/calculator/dj2j2slyhl)
+[<img src="https://i.imgur.com/lUngSk2.png">](https://www.desmos.com/calculator/dj2j2slyhl)
 
 Below is an example of a 2D random number generator implemented for the GPU with a shader, and explores a few transformations to create different distributions. This is very efficient and is an essential building block of many effects. This also can be replaced with a pre-generated random texture, which can be used in the exact same way with perhaps less computational cost. The 2D noise is easily interpreted as an image, and looks like the screen of a TV with no antenna. 
 
@@ -33,7 +33,9 @@ Inigo Quilez's famous "elevated" terrain
 It turns out lots of beautiful things in nature can be recreated just as wrapper around some noise.
 
 [Clouds Shadertoy](https://www.shadertoy.com/view/ll2SWd)
+
 [Water Shadertoy](https://www.shadertoy.com/view/Ms2SD1)
+
 [Nebula Shadertoy](https://www.shadertoy.com/view/MsVXWW)
 
 Procedural generation can be used for a lot more than just visual effects. Here is an example of randomly generated music, using some of the same principals.
