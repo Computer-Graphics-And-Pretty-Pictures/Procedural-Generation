@@ -24,7 +24,7 @@ This music visualizer demonstrates a more indirect use of 3D fractal noise. Rath
 
 The index.html file in this repository demonstrates the application of noise onto the height displacement of a plane. With just a few iterations a procedural terrain effect is possible. This is a simplified version of the way terrain generation in games like minecraft work.
 
-[<img src="">](https://computer-graphics-and-pretty-pictures.github.io/Procedural-Generation/)
+[<img src="https://i.imgur.com/riIxqXm.png">](https://computer-graphics-and-pretty-pictures.github.io/Procedural-Generation/)
 
 Inigo Quilez's famous "elevated" terrain
 
