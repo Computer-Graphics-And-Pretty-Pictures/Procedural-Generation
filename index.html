@@ -24,7 +24,6 @@
 
 			var time = 0.0;
 
-			//var noise = new SimplexNoise([1,2,57,274,72457,82]);
 			noise.seed(Math.random());
 
 			// The threejs webgl renderer
@@ -45,7 +44,7 @@
 			
 			console.log(geometry);
 			// The material properties of our object
-			var material = new THREE.MeshStandardMaterial( { color: 0x77aa33, shading: THREE.SmoothShading, side: 
+			var material = new THREE.MeshStandardMaterial( { color: 0x77aa33, side: 
 				THREE.DoubleSide, wireframe: false } );
 			// Use our geometry and material to create a mesh 
 			var mesh = new THREE.Mesh( geometry, material );
