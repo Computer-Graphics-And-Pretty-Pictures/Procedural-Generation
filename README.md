@@ -30,7 +30,7 @@ Inigo Quilez's famous "elevated" terrain
 
 [<img src="https://i.imgur.com/WLs7YJF.png">](https://www.shadertoy.com/view/MdX3Rr)
 
-It turns out lots of beautiful things in nature can be recreated just as wrapper around some noise.
+It turns out lots of beautiful things in nature can be synthesized by applying simple transformations to noise.
 
 [<img src="https://i.imgur.com/vOdFhw7.png">](https://www.shadertoy.com/view/ll2SWd)
 
